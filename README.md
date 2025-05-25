@@ -132,13 +132,7 @@ bike-showroom/
 - Add user authentication and order history.
 - Add charts for sold/stock bikes.
 
----
 
-## 📬 Contact
-
-For questions or feedback, contact:  
-📧 **support@superbike.com**  
-📞 **+91-9876543210**
 
 ---
 
