@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'showroom/style.css' %}">
+
+<h1>{{ bike.name }} <small>({{ bike.brand }})</small></h1>
+
+<div class="bike-card">
+    {% if bike.image %}
+        <img src="{{ bike.image.url }}" alt="{{ bike.name }}" width="400" height="300">
+    {% endif %}
+    <p class="price">Price: ₹{{ bike.price }}</p>
+    <p><strong>Description:</strong> {{ bike.description }}</p>
+    <p><strong>Stock:</strong> {{ bike.stock }}</p>
+    <br>
+    <a href="{% url 'bike_list' %}">← Back to Bike List</a>
+</div>

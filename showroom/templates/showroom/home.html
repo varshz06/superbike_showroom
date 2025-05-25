@@ -1,0 +1,94 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'showroom/style.css' %}">
+
+<header>
+    <div class="navbar">
+        <img src="{% static 'showroom/images/logo.png' %}" alt="Showroom Logo" class="logo">
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'bike_list' %}">Browse Bikes</a>
+            <a href="{% url 'add_bike' %}">Add Bike</a>
+        </nav>
+    </div>
+</header>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bike Showroom</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'showroom/style.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #fff3e0);
+            padding: 30px;
+        }
+        .header {
+            text-align: center;
+        }
+        .description {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .contact {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .blocks {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .block {
+            border: 2px solid #007bff;
+            padding: 20px;
+            border-radius: 12px;
+            width: 220px;
+            text-align: center;
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .block a {
+            display: block;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .block:hover {
+            background: #d6ecff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏍️ Welcome to SuperBike Showroom</h1>
+    </div>
+
+    <div class="description">
+        <p>Explore a premium collection of bikes from top brands. Find the perfect ride for your journey—speed, comfort, and style all in one place!</p>
+    </div>
+
+    <div class="blocks">
+        <div class="block">
+            <h3>🔧 Admin</h3>
+            <a href="/admin/">Go to Admin Panel</a>
+        </div>
+        <div class="block">
+            <h3>🧑‍💼 User</h3>
+            <a href="{% url 'bike_list' %}">View Bikes</a>
+            <a href="{% url 'add_bike' %}">Add Bikes to Buy</a> <!-- Newly added link -->
+        </div>
+    </div>
+
+    <div class="contact">
+        <h3>📞 Contact Us</h3>
+        <p>Email: support@superbike.com | Phone: +91-9876543210</p>
+    </div>
+</body>
+</html>

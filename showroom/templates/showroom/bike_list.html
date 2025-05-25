@@ -1,0 +1,32 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'showroom/style.css' %}">
+
+<h1>Available Bikes</h1>
+
+<!-- Add Bike Link -->
+<div style="text-align: center; margin-bottom: 20px;">
+    <a href="{% url 'add_bike' %}" style="background-color: #007bff; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none;">
+        ➕ Add New Bike
+    </a>
+</div>
+
+<div class="bike-container">
+    {% for bike in bikes %}
+        <div class="bike-card">
+            {% if bike.image %}
+                <a href="{% url 'bike_detail' bike.id %}">
+                    <img src="{{ bike.image.url }}" alt="{{ bike.name }}" width="300" height="200">
+                </a>
+            {% endif %}
+            <h2>
+                <a href="{% url 'bike_detail' bike.id %}">
+                    {{ bike.name }} <small>({{ bike.brand }})</small>
+                </a>
+            </h2>
+            <p class="price">Price: ₹{{ bike.price }}</p>
+            <p>{{ bike.description }}</p>
+            <p><strong>Stock:</strong> {{ bike.stock }}</p>
+        </div>
+    {% endfor %}
+</div>
+
